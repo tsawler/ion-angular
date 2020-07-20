@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: ServersPage
-  },
-  {
-    path: 'host-service',
-    loadChildren: () => import('./host-service/host-service.module').then( m => m.HostServicePageModule)
   }
 ];
 

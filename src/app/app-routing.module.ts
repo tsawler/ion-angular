@@ -9,6 +9,10 @@ const routes: Routes = [
             {
                 path: '',
                 loadChildren: () => import('./servers/servers.module').then(m => m.ServersPageModule),
+            },
+            {
+                path: ':hostID',
+                loadChildren: () => import('./servers/host/host.module').then(m => m.HostPageModule)
             }
         ]
     },
