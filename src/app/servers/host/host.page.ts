@@ -23,7 +23,7 @@ export class HostPage implements OnInit {
     ngOnInit() {
         this.activatedRoute.paramMap.subscribe(paramMap => {
             if (!paramMap.has('hostID')) {
-                // redirect
+                this.router.navigate(['/servers']);
                 return;
             }
             const hostID = paramMap.get('hostID');
