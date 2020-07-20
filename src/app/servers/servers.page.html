@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Servers</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let server of servers">
+            <ion-avatar slot="start">
+                <ion-img [src]="server.imageUrl"></ion-img>
+            </ion-avatar>
+            <ion-label>
+                {{ server.serverName }}
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
