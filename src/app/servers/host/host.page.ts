@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ServerService} from '../server.service';
 import {ServerModel} from '../server.model';
 
@@ -12,7 +12,10 @@ export class HostPage implements OnInit {
 
     loadedServer: ServerModel;
 
-    constructor(private activatedRoute: ActivatedRoute, private hostService: ServerService) {
+    constructor(
+        private activatedRoute: ActivatedRoute,
+        private hostService: ServerService,
+        private router: Router) {
     }
 
     ngOnInit() {
@@ -24,6 +27,11 @@ export class HostPage implements OnInit {
             const hostID = paramMap.get('hostID');
             this.loadedServer = this.hostService.getServer(hostID);
         });
+    }
+
+    onDeleteServer() {
+        this.hostService.deleteServer(this.loadedServer.id);
+        this.router.navigate(['/servers']);
     }
 
 }

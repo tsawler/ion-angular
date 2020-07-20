@@ -1,12 +1,12 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
         <ion-title>Servers</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="let server of servers">
+        <ion-item *ngFor="let server of servers" [routerLink]="['./', server.id]">
             <ion-avatar slot="start">
                 <ion-img [src]="server.imageUrl"></ion-img>
             </ion-avatar>

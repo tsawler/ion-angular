@@ -57,4 +57,11 @@ export class ServerService {
             })
         };
     }
+
+    deleteServer(serverID: string) {
+        this.servers = this.servers.filter(server => {
+            return server.id !== serverID;
+        });
+
+    }
 }
