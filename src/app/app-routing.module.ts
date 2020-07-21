@@ -5,9 +5,8 @@ const routes: Routes = [
     {path: '', redirectTo: 'problems', pathMatch: 'full'},
     {
         path: 'problems',
-        loadChildren: () => import('./problems/problems.module').then( m => m.ProblemsPageModule)
+        loadChildren: () => import('./problems/problems.module').then(m => m.ProblemsPageModule)
     },
-
     {
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthPageModule)
@@ -20,5 +19,5 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+
+export class AppRoutingModule {}
