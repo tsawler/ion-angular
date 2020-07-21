@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ServerModel} from './server.model';
 import {ServerService} from './server.service';
 
@@ -7,14 +7,15 @@ import {ServerService} from './server.service';
     templateUrl: './servers.page.html',
     styleUrls: ['./servers.page.scss'],
 })
-export class ServersPage implements OnInit {
+export class ServersPage  {
 
     servers: ServerModel[];
 
     constructor(private hostService: ServerService) {
     }
 
-    ngOnInit() {
+    ionViewWillEnter() {
         this.servers = this.hostService.getAllServers();
     }
+
 }
