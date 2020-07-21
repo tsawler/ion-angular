@@ -1,9 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>problems</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>GoWatcher</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let problem of problems">
+      <ion-label color="danger">{{problem.serviceName}}/{{problem.hostName}}: {{problem.problemStart}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+<!--      <ion-tab-button tab="problems-tab">-->
+<!--        <ion-label>Problems</ion-label>-->
+<!--        <ion-icon name="warning"></ion-icon>-->
+<!--      </ion-tab-button>-->
+      <ion-tab-button tab="hosts-tab">
+        <ion-label>Hosts</ion-label>
+        <ion-icon name="server"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="host-services-tab">
+        <ion-label>Services</ion-label>
+        <ion-icon name="cog"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="downtimes-tab">
+        <ion-label>Downtimes</ion-label>
+        <ion-icon name="alarm"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 
 </ion-content>
