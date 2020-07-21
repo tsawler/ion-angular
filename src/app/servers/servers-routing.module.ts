@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: ServersPage
-  }
+  },
 ];
 
 @NgModule({
