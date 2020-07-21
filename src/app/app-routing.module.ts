@@ -16,6 +16,18 @@ const routes: Routes = [
             }
         ]
     },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+    path: 'problems',
+    loadChildren: () => import('./problems/problems.module').then( m => m.ProblemsPageModule)
+  },
+  {
+    path: 'downtimes',
+    loadChildren: () => import('./downtimes/downtimes.module').then( m => m.DowntimesPageModule)
+  },
 
 ];
 
